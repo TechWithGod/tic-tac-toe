@@ -9,13 +9,19 @@ let playerTwo = true;
 let gameStatus = true;
 
 _.forEach((playBox, index, _) => {
+    if (gameStatus === false) {
+        console.log('game is stopped', gameStatus);
+        return;
+      }
   playBox.addEventListener("click", () => {
+    if(document.querySelector('.winner')) {
+        gameStatus = false;
+        return;
+      }
     if (playBox.textContent !== "") {
       return;
     }
-    if (gameStatus === false) {
-      return;
-    }
+  
     if (playerOne) {
       playBox.textContent = "X";
       playerOne = false;
@@ -34,11 +40,7 @@ _.forEach((playBox, index, _) => {
 });
 
 const winnerDeclare = (player) => {
-  if (document.querySelector(".winner")) {
-    gameStatus = false;
-    return;
-  }
-
+    
   const div = document.createElement("div");
   div.className = "winner";
   let symbol;
@@ -47,13 +49,12 @@ const winnerDeclare = (player) => {
     document.body.appendChild(div);
     return;
   }
-  if (player === "Player 1") {
-    symbol = "X";
-  } else {
-    symbol = "O";
-  }
+
   div.textContent = `${player.toUpperCase()} WON!`;
   document.body.appendChild(div);
+
+ 
+
 };
 
 const changeStyling = (idx1, idx2, idx3) => {
