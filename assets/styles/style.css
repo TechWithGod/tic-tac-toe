@@ -1,0 +1,100 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  padding: 0 2rem;
+}
+
+h1 {
+  width: 100vw;
+  background: red;
+  position: fixed;
+  top: 0;
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+  text-shadow: 1px 1px 4px black;
+  font-weight: bolder;
+}
+
+button {
+    font-size:1.5rem;
+    color:white;
+    background-color: rgb(230, 50, 50);
+    border:none;
+    padding:0.5rem 1rem;
+    font-weight:bold;
+}
+
+button:hover {
+    background-color: rgba(255, 0, 0, 0.741);
+    cursor:pointer;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-board {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem auto;
+  width: 300px;
+  height: 300px;
+}
+
+#game-board > div {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  font-weight: bold;
+  color: black;
+}
+
+.box1,
+.box4,
+.box7,
+.box2,
+.box5,
+.box8 {
+  border-right: 2px solid black;
+}
+
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6 {
+  border-bottom: 2px solid black;
+}
+
+.winner {
+  margin: auto;
+  padding: 0 0.5rem;
+  width: fit-content;
+  font-size: 3rem;
+  text-align: center;
+  font-weight: bolder;
+  position: fixed;
+  bottom: 5rem;
+  color: black;
+}
