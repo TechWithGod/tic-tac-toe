@@ -91,10 +91,10 @@ body {
   margin: auto;
   padding: 0 0.5rem;
   width: fit-content;
-  font-size: 3rem;
+  font-size: 1.2rem;
   text-align: center;
   font-weight: bolder;
   position: fixed;
-  bottom: 5rem;
+  bottom: 0;
   color: black;
 }
